@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const matricula = document.getElementById('matricula').value;
             const senha = document.getElementById('senha').value;
-
+            alert("d");
             if (matricula && senha) {
                 const novoUsuarioRef = ref(database, 'usuarios/' + Date.now());
                 set(novoUsuarioRef, {
@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     senha: senha,
 		    data: new Date(Date.now()).toLocaleString()
                 }).then(() => {
+		    alert("b");
                     document.getElementById('matricula').value = '';
                     document.getElementById('senha').value = '';
                 }).catch((error) => {
+		    alert("a");
                     console.error("Erro ao salvar usuário: ", error);
                 });
             }
