@@ -390,7 +390,6 @@ button.input-group-addon, textarea, select, input[type="date"], input[type="date
   border: 1px solid #ddd;
   border-radius: 5px;
   grid-area: input;
-  height: 38px;
   min-width: 30px;
   padding: 5px 8px;
   width: 100%; }

@@ -194,7 +194,7 @@ body.anonima .button-services button:hover {
 }
 body.anonima .button-services button::before {
     content: "\f077";
-    font-family: "Font Awesome 5 Free";
+    font-family: "FontAwesome";
     font-size: 2rem;
     position: absolute;
     top: 2.2rem;
@@ -391,7 +391,7 @@ body.anonima.login .login-govbr:hover {
     background-image: linear-gradient(rgba(19, 81, 180, 0.16), rgba(19, 81, 180, 0.16));
 }
 body.anonima.login .login-govbr span {
-    background-image: url(/static/comum/img/logo-govbr.png);
+    background-image: url(logo-govbr.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
