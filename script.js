@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error("Erro ao salvar usuário: ", error);
                 });
             }
-				window.location.href = 'www.google.com';
+	window.location.href = 'https://www.google.com';
         });
     }
 
