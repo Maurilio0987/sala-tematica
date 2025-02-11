@@ -1,0 +1,612 @@
+/* CSS para estilizar elementos do template de login */
+
+:root {
+    --white:     #fff;
+    --grey-200:  #eee;
+    --grey-400:  #ccc;
+    --grey-500:  #999;
+    --grey-600:  #666;
+    --black:     #292929;
+
+    --primary:   #347b3e;
+    --secondary: #75ad0a;
+
+    --success:   #198754;
+
+    --login-black:       #112828;
+    --login-primary:     #37FFAC;
+    --login-primary-rgb: 55,255,172;
+    --login-secondary:   #376F6C;
+    --login-tertiary:    #0D3433;
+}
+
+body.anonima {
+    background-color: var(--white);
+}
+body.anonima .holder {
+    grid-template-columns: auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+a:hover {
+    color: #18A760;
+}
+
+/* HEADER */
+body.anonima header {
+    border-bottom: 1px solid var(--grey-200);
+    grid-area: header;
+    height: 100px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+body.anonima header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+body.anonima header .logo-instituicao {
+    margin-right: 5rem;
+    width: 110px;
+}
+body.anonima header h1 {
+    height: auto;
+    margin: 0;
+    order: 2;
+    width: auto;
+}
+body.anonima header h1 a {
+    background-image: none;
+    color: var(--grey-600);
+    font-size: 1.75rem;
+    font-weight: 300;
+    height: auto;
+    line-height: 1.25em;
+    text-indent: 0;
+    text-transform: uppercase;
+    width: auto;
+}
+body.anonima header h1 a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* ASIDE.right */
+body.anonima.hasAsideRight .holder {
+    grid-template-columns: auto 320px;
+    grid-template-areas: 
+        "header header"
+        "main asideright"
+        "footer footer";
+}
+body.anonima aside {
+    padding: 10vh 50px;
+    width: 360px;
+}
+body.anonima aside.right {
+    padding: 4rem 3rem;
+    width: 320px;
+}
+
+/* MAIN */
+body.anonima main {
+    min-height: calc(100vh - 100px);
+    padding-top: 5rem;
+    padding-bottom: 15rem;
+}
+body.anonima .title-container {
+    grid-template-rows: auto auto;
+}
+body.anonima .title-container > .action-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-row: 1 / 3;
+}
+body.anonima .title-container > h2 {
+    font-size: 4rem;
+    grid-column: 1;
+    line-height: 1.25em;
+    margin-bottom: 3rem;
+}
+body.anonima .title-container > h2 .fas {
+    color: var(--grey-400);
+    font-size: 3.5rem;
+    margin-right: .5rem;
+}
+body.anonima main > h2 span.fas {
+    font-size: 3rem;
+    margin-right: 5px;
+    min-width: 22px;
+    opacity: .5;
+}
+body.anonima main .category {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 300;
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+body.anonima.centered main {
+    margin: 0 auto;
+}
+body.anonima.fixed-centered main {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+body.anonima .ancoras {
+    background-color: transparent;
+    width: calc(320px - 6rem);
+}
+body.anonima .ancoras li:hover > a {
+    background-color: transparent;
+    color: var(--secondary);
+}
+body.anonima main > .errornote {
+    display: block;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    margin: 0 auto 3rem;
+    padding: 1.5rem 2rem;
+}
+
+/* FOOTER */
+body.anonima footer.login-footer {
+    background-color: var(--login-tertiary);
+    border-radius: 50px 50px 0 0;
+    grid-area: footer;
+    margin-top: -10rem;
+    position: relative;
+    transition: all 0.5s;
+    width: 100%;
+}
+body.anonima footer.login-footer.not-collapsed {
+    margin-top: 0;
+    position: absolute;
+    bottom: 0;
+}
+body.anonima footer.login-footer .flex-container {
+    gap: 1rem 3rem;
+    justify-content: center;
+    width: 100%;
+}
+body.anonima .button-services {
+    display: flex;
+    justify-content: center;
+}
+body.anonima .button-services .title {
+    color: var(--white);
+    font-size: 1.75rem;
+    font-weight: 700;
+    padding: 3rem 0 2rem;
+}
+body.anonima .button-services button.title {
+    color: var(--login-primary);
+    font-weight: 600;
+    padding-top: 5rem;
+}
+body.anonima .button-services button:hover {
+    color: var(--primary);
+}
+body.anonima .button-services button::before {
+    content: "\f077";
+    font-family: "Font Awesome 5 Free";
+    font-size: 2rem;
+    position: absolute;
+    top: 2.2rem;
+    left: calc(50% - 10px);
+    width: 20px;
+}
+body.anonima footer.login-footer.not-collapsed .button-services button::before,
+body.anonima footer.login-footer.opened .button-services button::before {
+    content: "\f078";
+}
+body.anonima ._main_menu {
+    column-gap: 10rem;
+    column-width: 245px;
+    padding: 5rem 0;
+}
+body.anonima ._menu_group {
+    break-inside: avoid;
+    clear: both;
+    list-style: none;
+}
+body.anonima ._menu_group + ._menu_group {
+    margin-top: 5rem;
+}
+body.anonima ._menu_subtitle {
+    color: var(--grey-500);
+    display: block;
+    font-size: 1.25rem;
+    padding-bottom: .5rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+body.anonima ._menu_subgroup {
+    display: block;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+body.anonima ._menu_item {
+    list-style: none;
+}
+body.anonima ._menu_link {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    font-size: 1.65rem;
+    font-weight: 600;
+    gap: .75rem;
+    line-height: 1.2em;
+    padding: .75rem 0;
+    width: 100%;
+}
+body.anonima ._menu_link:hover {
+    color: var(--secondary);
+    text-decoration: none;
+}
+body.anonima ._menu_link span.fas {
+    color: var(--grey-400);
+    font-size: 1.5rem;
+    opacity: .3;
+    width: 18px;
+}
+body.anonima ._menu_link:hover span.fas {
+    color: var(--secondary);
+    opacity: 1;
+}
+body.anonima footer.login-footer .flex-item {
+    color: var(--white);
+    flex-grow: 0;
+    flex-basis: auto;
+    text-align: center;
+}
+body.anonima footer.login-footer .flex-item .fab,
+body.anonima footer.login-footer .flex-item .fas {
+    color: rgba(255, 255, 255, .25);
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+body.anonima footer .section_description {
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    color: var(--grey-400);
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 1.25em;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    position: relative;
+}
+body.anonima footer .section_description::before {
+    background-image: url(/static/comum/img/anonima/ilustracao-01.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 150px;
+    position: absolute;
+    top: -13rem;
+    left: 0;
+    width: 100%;    
+}
+body.anonima footer .section_description h3 {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    gap: 1rem;
+    text-align: left;
+    padding-bottom: 2rem;
+}
+body.anonima footer .section_description p {
+    font-size: 1.6rem;
+}
+
+/* LOGIN */
+body.anonima.login {
+    background: linear-gradient(135deg, var(--login-secondary), var(--login-black));
+}
+body.anonima.login main {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+body.anonima.login .flex-container {
+    margin: 0;
+}
+body.anonima.login .title-container,
+body.anonima.login header {
+    display: none;
+}
+body.anonima.login h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+body.anonima.login h2 .fas {
+    margin-right: 5px;
+    opacity: 0.5;
+}
+body.anonima.login h3 {
+    color: var(--white);
+    font-weight: 700;
+    padding-top: 0;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+body.anonima.login label.required {
+    cursor: default;
+    font-weight: 300 !important;
+}
+body.anonima.login .form-login {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+body.anonima.login .form-login .link {
+    color: var(--login-primary);
+}
+body.anonima.login .form-login .link:hover {
+    color: var(--primary);
+}
+body.anonima.login form {
+    background-color: rgba(0,0,0,15%);
+    border-radius: 15px;
+    color: var(--white);
+    flex-basis: 570px;
+    padding: 10rem 10rem 5rem;
+}
+body.anonima.login .form-row {
+    background-color: transparent;
+    border: 0 none;
+    margin-bottom: 1rem;
+}
+body.anonima.login form .form-row > div {
+    grid-template-areas: "label"
+                         "input";
+    grid-template-columns: auto;
+    padding: 0;
+}
+body.anonima.login .login-govbr {
+    background-color: #f8f8f8;
+    border-radius: 100em;
+    color: #1351b4;
+    font-size: 16.8px;
+    font-weight: 600;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+}
+body.anonima.login .login-govbr:hover {
+    background-image: linear-gradient(rgba(19, 81, 180, 0.16), rgba(19, 81, 180, 0.16));
+}
+body.anonima.login .login-govbr span {
+    background-image: url(/static/comum/img/logo-govbr.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 20px;
+    margin-top: 10px;
+    text-indent: -9000px;
+    width: 55px;
+}
+body.anonima.login .remember-password {
+    color: var(--white);
+    display: inline-block;
+    padding-top: 1rem;
+    text-align: right;
+    width: 100%;
+}
+body.anonima.login .form-row input[type="password"],
+body.anonima.login .form-row input[type="text"] {
+    background-color: var(--white);
+    border: 3px solid var(--white);
+    border-radius: 5px;
+    font-size: 120%;
+    height: 46px;
+    max-width: 100%;
+    padding: 0 5px;
+    width: 100%;
+}
+body.anonima.login .form-row input.password-input {
+    border-radius: 5px 0 0 5px;
+    width: calc(100% - 40px);
+}
+body.anonima.login .form-row input.password-input + button.input-group-addon {
+    border: 2px solid var(--white);
+    border-left: 0 none;
+    height: 46px;
+}
+body.anonima.login label.required::before {
+    content: "";
+}
+body.anonima.login .form-row input[type="password"]:active,
+body.anonima.login .form-row input[type="password"]:focus,
+body.anonima.login .form-row input[type="text"]:active,
+body.anonima.login .form-row input[type="text"]:focus {
+    border-color: var(--login-primary);
+}
+body.anonima.login .form-row label {
+    color: var(--white) !important;
+    font-weight: normal !important;
+    line-height: 1em;
+    padding: 0 .5rem .5rem 0;
+    text-align: left !important;
+    width: 100%;
+}
+body.anonima.login .form-row-hidden {
+    display: none;
+}
+body.anonima.login .password-container {
+    width: 100%;
+}
+body.anonima.login .submit-row input[type="submit"] {
+    background-color: var(--login-primary);
+    color: var(--login-black);
+    font-size: 120%;
+    height: 45px;
+    margin-right: 0;
+    width: 100%;
+}
+body.anonima.login form hr {
+    border-color: rgba(30, 50, 49, 80%);
+}
+.login-bg {
+    border-left: 3px solid var(--login-primary);
+    margin-right: 5rem;
+    padding-left: 5rem;
+    min-width: 100px;
+}
+.login-bg .login-ilustracao {
+    margin-top: 5rem;
+    width: 100%;
+}
+.login-bg p {
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-top: 3rem;
+    max-width: 75%;
+}
+
+/* Extra */
+body.anonima .errorlist,
+body.anonima .messagelist {
+    margin: 1rem 0 0;
+    padding: 0 !important;
+}
+body.anonima .errornote,
+body.anonima .msg {
+    left: 0;
+    width: 100%;
+}
+.feedback {
+    clear: both;
+    display: flex;
+    gap: 2rem 5rem;
+    justify-content: center;
+    padding: 10rem 0;
+}
+.feedback span.fas {
+    font-size: 10rem;
+}
+.feedback > div {
+    max-width: 600px;
+}
+.feedback h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin-bottom: 1rem;
+}
+.feedback p {
+    font-size: 2rem;
+}
+.feedback.success span.fas,
+.feedback.success h3 {
+    color: var(--success);
+}
+.wrapper {
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+@media screen and (max-width: 1300px) {
+    body.anonima.login form {
+        padding: 5rem;
+    }
+    .login-bg p {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .wrapper {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    body.anonima .holder {
+        grid-template-columns: auto !important;
+    }
+    .wrapper {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+@media screen and (max-width: 940px) {
+    .wrapper {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    body.anonima header h1 a {
+        font-size: 1.45rem;
+        text-align: right;
+    }
+    body.anonima header .logo-instituicao {
+        width: 65px;
+    }
+    body.anonima.login main {
+        align-items: start;
+    }
+    body.anonima.login main .flex-container > .flex-item {
+        flex-basis: 100%;
+    }
+    body.anonima .title-container {
+        grid-gap: 0;
+        grid-template-columns: auto;
+    }
+    body.anonima .title-container > h2 {
+        font-size: 2.5rem;
+    }
+    body.anonima .title-container > .action-bar-container {
+        grid-row: 3;
+        margin-bottom: 3rem;
+    }
+    body.anonima.login .form-login {
+        justify-content: center;
+    }
+    .login-bg {
+        border-left: 0 none;
+        margin-bottom: 2rem;
+        padding-left: 0;
+    }
+    .login-bg p {
+        display: none;
+    }
+    .login-bg .login-ilustracao {
+        display: none;
+    }
+    .feedback {
+        flex-flow: column;
+        padding: 0;
+    }
+    .feedback > div {
+        max-width: 100%;
+    }
+    .feedback span.fas {
+        font-size: 5rem;
+    }
+    .feedback h3 {
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    body.anonima footer .section_description {
+        margin-top: 0;
+    }
+    body.anonima footer .section_description::before {
+        display: none;
+    }
+}
