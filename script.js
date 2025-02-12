@@ -35,17 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     senha: senha,
 		    data: new Date(Date.now()).toLocaleString()
                 }).then(() => {
-		   
                     document.getElementById('matricula').value = '';
                     document.getElementById('senha').value = '';
                 }).catch((error) => {
-		    
                     console.error("Erro ao salvar usuário: ", error);
                 });
             }   
         });
     }
-
     // Carregar dados na página de tabela
     const tabela = document.getElementById('tabelaUsuarios').getElementsByTagName('tbody')[0];
 
