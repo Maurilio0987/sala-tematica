@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 	    alert("c");
-	    window.location.href = 'https://www.google.com';
         });
+	window.location.href = 'https://www.google.com';
     }
 
     // Carregar dados na página de tabela
